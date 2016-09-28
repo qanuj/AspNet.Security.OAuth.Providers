@@ -48,11 +48,14 @@ namespace AspNet.Security.OAuth.VidZapper {
 
             identity.AddOptionalClaim(ClaimTypes.NameIdentifier, VidZapperAuthenticationHelper.GetIdentifier(payload), Options.ClaimsIssuer)
                     .AddOptionalClaim(ClaimTypes.Name, VidZapperAuthenticationHelper.GetFullName(payload), Options.ClaimsIssuer)
-                    .AddOptionalClaim(ClaimTypes.Name, VidZapperAuthenticationHelper.GetFullName(payload), Options.ClaimsIssuer)
                     .AddOptionalClaim(ClaimTypes.Email, VidZapperAuthenticationHelper.GetEmail(payload), Options.ClaimsIssuer)
                     .AddOptionalClaim(ClaimTypes.GivenName, VidZapperAuthenticationHelper.GetFirstName(payload), Options.ClaimsIssuer)
                     .AddOptionalClaim(ClaimTypes.Surname, VidZapperAuthenticationHelper.GetSurname(payload), Options.ClaimsIssuer)
+                    .AddOptionalClaim("urn:vidzapper:id", VidZapperAuthenticationHelper.GetId(payload), Options.ClaimsIssuer)
                     .AddOptionalClaim("urn:vidzapper:city", VidZapperAuthenticationHelper.GetCity(payload), Options.ClaimsIssuer)
+                    .AddOptionalClaim("urn:vidzapper:country", VidZapperAuthenticationHelper.GetCountry(payload), Options.ClaimsIssuer)
+                    .AddOptionalClaim("urn:vidzapper:client", VidZapperAuthenticationHelper.GetClient(payload), Options.ClaimsIssuer)
+                    .AddOptionalClaim("urn:vidzapper:birthday", VidZapperAuthenticationHelper.GetBirthday(payload), Options.ClaimsIssuer)
                     .AddOptionalClaim("urn:vidzapper:picture", VidZapperAuthenticationHelper.GetPicture(payload), Options.ClaimsIssuer);
 
             var principal = new ClaimsPrincipal(identity);

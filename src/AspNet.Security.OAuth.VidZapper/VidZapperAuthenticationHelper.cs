@@ -48,5 +48,29 @@ namespace AspNet.Security.OAuth.VidZapper {
         /// </summary>
         public static string GetCity([NotNull] JObject user) => user.Value<string>("City");
 
+        /// <summary>
+        /// Gets the country id corresponding to the authenticated user.
+        /// </summary>
+        public static string GetCountry([NotNull] JObject user) => user.Value<string>("CountryId");
+
+        /// <summary>
+        /// Gets the language id corresponding to the authenticated user.
+        /// </summary>
+        public static string GetLanguage([NotNull] JObject user) => user.Value<string>("LanguageId");
+
+        /// <summary>
+        /// Gets the client id corresponding to the authenticated user.
+        /// </summary>
+        public static string GetClient([NotNull] JObject user) => user.Value<string>("ClientId");
+
+        /// <summary>
+        /// Gets the birthday corresponding to the authenticated user.
+        /// </summary>
+        public static string GetBirthday([NotNull] JObject user) => user.Value<string>("Birthday");
+
+        /// <summary>
+        /// Gets the client id corresponding to the authenticated user.
+        /// </summary>
+        public static string GetId([NotNull] JObject user) => user.Value<string>("Id");
     }
 }
